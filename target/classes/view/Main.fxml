@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.managerrepositories.controller.ProjectController" styleClass="app-root">
+    <fx:define><ToggleGroup fx:id="tabs"/></fx:define>
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="titlebar">
+            <HBox spacing="6"><Region styleClass="window-dot dot-red"/><Region styleClass="window-dot dot-yellow"/><Region styleClass="window-dot dot-green"/></HBox>
+            <Label text="DEVHUB" styleClass="brand"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Label fx:id="summaryLabel" styleClass="muted mono"/>
+            <padding><Insets left="16" right="16"/></padding>
+        </HBox>
+    </top>
+    <left>
+        <VBox prefWidth="220" styleClass="sidebar">
+            <HBox styleClass="sidebar-tabs">
+                <ToggleButton fx:id="allTab" text="ALL" onAction="#showAll" styleClass="tab-button" toggleGroup="$tabs" selected="true" HBox.hgrow="ALWAYS"/>
+                <ToggleButton fx:id="starredTab" text="STARRED" onAction="#showStarred" styleClass="tab-button" toggleGroup="$tabs" HBox.hgrow="ALWAYS"/>
+                <ToggleButton fx:id="recentTab" text="RECENT" onAction="#showRecent" styleClass="tab-button" toggleGroup="$tabs" HBox.hgrow="ALWAYS"/>
+            </HBox>
+            <ListView fx:id="sidebarProjects" VBox.vgrow="ALWAYS" styleClass="sidebar-list"/>
+            <VBox spacing="5" styleClass="sidebar-footer">
+                <Label text="LANGUAGE" styleClass="section-title"/>
+                <ComboBox fx:id="languageFilter" promptText="Todos os idiomas" onAction="#filterProjects" maxWidth="1.7976931348623157E308"/>
+                <HBox><Label text="FAVORITOS" styleClass="section-title"/><Pane HBox.hgrow="ALWAYS"/><Label fx:id="starCountLabel" styleClass="accent mono"/></HBox>
+                <HBox><Label text="TOTAL FILES" styleClass="section-title"/><Pane HBox.hgrow="ALWAYS"/><Label fx:id="fileCountLabel" styleClass="muted mono"/></HBox>
+            </VBox>
+        </VBox>
+    </left>
+    <center>
+        <VBox>
+            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="toolbar">
+                <TextField fx:id="searchField" promptText="Pesquisar projetos, tags..." onKeyReleased="#filterProjects" styleClass="search-field" prefWidth="260"/>
+                <ToggleButton fx:id="onlyStarred" text="☆  FAVORITOS" onAction="#filterProjects" styleClass="tool-button"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Label fx:id="resultLabel" styleClass="muted mono"/>
+                <Button text="⌘  LISTA" onAction="#toggleView" styleClass="tool-button"/>
+                <Button text="＋  ADICIONAR" onAction="#openAddDialog" styleClass="add-button"/>
+                <padding><Insets left="16" right="16"/></padding>
+            </HBox>
+            <SplitPane fx:id="contentSplit" dividerPositions="0.58" VBox.vgrow="ALWAYS">
+                <items>
+                    <ScrollPane fitToWidth="true" styleClass="content-scroll">
+                        <content><TilePane fx:id="projectGrid" hgap="12" vgap="12" prefTileWidth="230" prefTileHeight="160" styleClass="project-grid"><padding><Insets top="16" right="16" bottom="16" left="16"/></padding></TilePane></content>
+                    </ScrollPane>
+                    <VBox fx:id="detailPanel" prefWidth="370" styleClass="detail-panel">
+                        <HBox alignment="CENTER_LEFT" spacing="8" styleClass="detail-header"><Label fx:id="detailName" styleClass="detail-name mono"/><Pane HBox.hgrow="ALWAYS"/><Button text="×" onAction="#clearSelection" styleClass="icon-button"/></HBox>
+                        <Label fx:id="detailPath" wrapText="true" styleClass="path-label mono"/>
+                        <HBox spacing="24" styleClass="metrics"><VBox><Label text="FILES" styleClass="section-title"/><Label fx:id="detailFiles" styleClass="metric-value mono"/></VBox><VBox><Label text="SIZE" styleClass="section-title"/><Label fx:id="detailSize" styleClass="metric-value mono"/></VBox><VBox><Label text="OPENED" styleClass="section-title"/><Label fx:id="detailOpened" styleClass="metric-value mono"/></VBox></HBox>
+                        <FlowPane fx:id="tagPane" hgap="6" vgap="6" styleClass="tag-pane"/>
+                        <HBox alignment="CENTER_LEFT" styleClass="tree-caption"><Label text="FILE TREE" styleClass="section-title"/><Pane HBox.hgrow="ALWAYS"/><Label text="clique para expandir" styleClass="muted mono"/></HBox>
+                        <TreeView fx:id="fileTree" VBox.vgrow="ALWAYS" styleClass="file-tree"/>
+                        <HBox spacing="8" styleClass="detail-actions"><Button text="▣  TERMINAL" styleClass="action-button" HBox.hgrow="ALWAYS"/><Button text="✎  RENOMEAR" styleClass="action-button" HBox.hgrow="ALWAYS"/><Button text="⌫" onAction="#deleteSelected" styleClass="delete-button"/></HBox>
+                    </VBox>
+                </items>
+            </SplitPane>
+        </VBox>
+    </center>
+</BorderPane>
