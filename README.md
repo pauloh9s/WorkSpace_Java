@@ -1,48 +1,44 @@
-# DEVHUB — Demo JavaFX
+# SimplyWork
 
-Esta pasta contém a adaptação do projeto **Gerenciador de Projetos Desktop** para uma aplicação desktop Java, estruturada com Maven e interface JavaFX.
+Aplicação desktop em JavaFX para organizar e consultar projetos de desenvolvimento em uma única interface. O SimplyWork apresenta um catálogo de projetos com informações como linguagem, caminho, tags, quantidade de arquivos, tamanho e data de abertura.
 
-## Migração de linguagem
+## Recursos
 
-O projeto de origem foi criado com React, TypeScript, Vite e Tailwind CSS. Na demo, a interface e os comportamentos foram migrados para Java 21 e JavaFX:
+- Visualização de projetos em cards ou lista.
+- Pesquisa por nome e tags.
+- Filtros por linguagem e favoritos.
+- Abas para todos os projetos, favoritos e projetos recentes.
+- Painel de detalhes com métricas, tags e árvore de arquivos.
+- Marcação de projetos como favoritos.
+- Inclusão e exclusão de projetos durante a sessão.
 
-| Origem | Demo Java |
-| --- | --- |
-| React (`App.tsx`) | `ProjectController.java` + `Main.fxml` |
-| Estado com `useState` | Lista em memória e ações no controlador JavaFX |
-| Componentes React | Nós JavaFX criados pelo FXML e pelo controlador |
-| Tailwind/CSS inline | `application.css` com seletores JavaFX |
-| Vite/pnpm | Maven (`pom.xml`) |
+## Estado atual
 
-## Funcionalidades migradas
+O catálogo usa dados de exemplo mantidos em memória. As alterações feitas na aplicação duram apenas enquanto ela está aberta; ainda não há leitura do sistema de arquivos, persistência em banco de dados nem integração com terminal.
 
-- Catálogo de projetos de demonstração, com linguagem, caminho, tags, tamanho e quantidade de arquivos.
-- Pesquisa por nome ou tag.
-- Filtro por linguagem, favoritos e abas Todos/Favoritos/Recentes.
-- Cards de projetos e visual alternativo em lista.
-- Painel de detalhes com métricas, tags e árvore de arquivos expansível.
-- Marcação e remoção de favoritos.
-- Inclusão de um novo projeto por caixa de diálogo.
-- Exclusão do projeto selecionado.
+## Tecnologias
 
-Os dados ainda são de demonstração e permanecem apenas em memória enquanto a aplicação está aberta. Não há integração com o sistema de arquivos, banco de dados ou terminal nesta etapa.
+- Java 21
+- JavaFX 21
+- FXML e CSS para a interface
+- Maven
 
-## Estrutura
+## Estrutura do projeto
 
 ```text
 src/main/java/com/managerrepositories/
-├── Main.java                         # Inicializa a aplicação JavaFX
-├── controller/ProjectController.java # Comportamentos e dados da tela
+├── Main.java                         # Ponto de entrada da aplicação
+├── controller/ProjectController.java # Controle da interface e do catálogo
 └── model/
     ├── Project.java                  # Modelo de projeto
     └── FileNode.java                 # Modelo da árvore de arquivos
 
 src/main/resources/
-├── view/Main.fxml                    # Estrutura da interface
-└── css/application.css               # Tema e estilos JavaFX
+├── view/Main.fxml                    # Layout da interface
+└── css/application.css               # Estilos JavaFX
 ```
 
-## Executar
+## Como executar
 
 Pré-requisitos: JDK 21 e Maven.
 
@@ -50,17 +46,14 @@ Pré-requisitos: JDK 21 e Maven.
 mvn javafx:run
 ```
 
-Para validar a compilação:
+## Validação
 
 ```powershell
 mvn clean test
 ```
 
-## Dependências
-
-Definidas em `pom.xml`:
+## Dependências principais
 
 - `javafx-controls`
 - `javafx-fxml`
 - `javafx-maven-plugin`
-
