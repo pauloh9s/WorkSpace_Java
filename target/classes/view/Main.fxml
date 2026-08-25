@@ -21,6 +21,7 @@
                 <ToggleButton fx:id="allTab" text="ALL" onAction="#showAll" styleClass="tab-button" toggleGroup="$tabs" selected="true" HBox.hgrow="ALWAYS"/>
                 <ToggleButton fx:id="starredTab" text="STARRED" onAction="#showStarred" styleClass="tab-button" toggleGroup="$tabs" HBox.hgrow="ALWAYS"/>
                 <ToggleButton fx:id="recentTab" text="RECENT" onAction="#showRecent" styleClass="tab-button" toggleGroup="$tabs" HBox.hgrow="ALWAYS"/>
+                <ToggleButton fx:id="workspaceTab" text="WORKSPACE" onAction="#chooseWorkspace" styleClass="tab-button" toggleGroup="$tabs" HBox.hgrow="ALWAYS"/>
             </HBox>
             <ListView fx:id="sidebarProjects" VBox.vgrow="ALWAYS" styleClass="sidebar-list"/>
             <VBox spacing="5" styleClass="sidebar-footer">
@@ -39,6 +40,7 @@
                 <Pane HBox.hgrow="ALWAYS"/>
                 <Label fx:id="resultLabel" styleClass="muted mono"/>
                 <Button text="⌘  LISTA" onAction="#toggleView" styleClass="tool-button"/>
+                <Button text="▣  WORKSPACE" onAction="#chooseWorkspace" styleClass="tool-button"/>
                 <Button text="＋  ADICIONAR" onAction="#openAddDialog" styleClass="add-button"/>
                 <padding><Insets left="16" right="16"/></padding>
             </HBox>

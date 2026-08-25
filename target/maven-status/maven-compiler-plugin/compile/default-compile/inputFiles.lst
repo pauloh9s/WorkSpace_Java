@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 C:\Users\Paulo\Documents\WorkSpace\SimplyWork\src\main\java\com\managerrepositories\controller\ProjectController.java
 C:\Users\Paulo\Documents\WorkSpace\SimplyWork\src\main\java\com\managerrepositories\Main.java
 C:\Users\Paulo\Documents\WorkSpace\SimplyWork\src\main\java\com\managerrepositories\model\FileNode.java
 C:\Users\Paulo\Documents\WorkSpace\SimplyWork\src\main\java\com\managerrepositories\model\Project.java
+=======
+C:\Users\Paulo\Documents\WorkSpace\demo\src\main\java\com\managerrepositories\controller\ProjectController.java
+C:\Users\Paulo\Documents\WorkSpace\demo\src\main\java\com\managerrepositories\Main.java
+C:\Users\Paulo\Documents\WorkSpace\demo\src\main\java\com\managerrepositories\model\FileNode.java
+C:\Users\Paulo\Documents\WorkSpace\demo\src\main\java\com\managerrepositories\model\Project.java
+C:\Users\Paulo\Documents\WorkSpace\demo\src\main\java\com\managerrepositories\service\WorkspaceScanner.java
+>>>>>>> d968ba8 (aplicação abrindo pastas, e ao iniciar, abrindo a lista de recente)
