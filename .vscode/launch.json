@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run JavaFX",
+            "request": "launch",
+            "mainClass": "com.managerrepositories.Main",
+            "projectName": "demo",
+            "vmArgs": "--module-path \"C:/Users/Paulo/.m2/repository/org/openjfx/javafx-controls/21.0.12;C:/Users/Paulo/.m2/repository/org/openjfx/javafx-fxml/21.0.12;C:/Users/Paulo/.m2/repository/org/openjfx/javafx-graphics/21.0.12;C:/Users/Paulo/.m2/repository/org/openjfx/javafx-base/21.0.12\" --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
