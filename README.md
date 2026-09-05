@@ -18,12 +18,6 @@ O catálogo usa dados de exemplo mantidos em memória. As alterações feitas na
 
 ## Tecnologias
 
-<<<<<<< HEAD
-- Java 21
-- JavaFX 21
-- FXML e CSS para a interface
-- Maven
-=======
 ## Workspace local
 
 A aba **WORKSPACE** transforma a demo em um gerenciador local de pastas para teste:
@@ -37,7 +31,6 @@ Na leitura, o sistema obtém nome, caminho, quantidade de arquivos, tamanho, dat
 Esta etapa é estritamente de leitura: não move, renomeia, exclui nem modifica arquivos do computador. O workspace escolhido vale apenas durante a sessão atual.
 
 Antes de escolher um workspace, a tela mostra dados de demonstração. Não há banco de dados ou integração de terminal nesta etapa.
->>>>>>> d968ba8 (aplicação abrindo pastas, e ao iniciar, abrindo a lista de recente)
 
 ## Estrutura do projeto
 

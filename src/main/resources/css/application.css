@@ -1,30 +1,330 @@
-.app-root { -fx-background-color: #0a0a0c; -fx-font-family: "Segoe UI", Arial, sans-serif; }
-.titlebar { -fx-pref-height: 42; -fx-background-color: #0d0d10; -fx-border-color: transparent transparent #1a1a22 transparent; }
-.window-dot { -fx-min-width: 10; -fx-min-height: 10; -fx-max-width: 10; -fx-max-height: 10; -fx-background-radius: 10; }
-.dot-red { -fx-background-color: #ff4466; } .dot-yellow { -fx-background-color: #f7df1e; } .dot-green { -fx-background-color: #39ff8a; }
-.brand, .mono { -fx-font-family: "Consolas", monospace; } .brand { -fx-text-fill: #77778c; -fx-font-size: 11px; -fx-font-weight: bold; -fx-letter-spacing: 2px; }
-.muted { -fx-text-fill: #55556a; -fx-font-size: 10px; } .accent { -fx-text-fill: #00e5ff; -fx-font-size: 10px; }
-.sidebar { -fx-background-color: #0d0d10; -fx-border-color: transparent #1a1a22 transparent transparent; }
-.sidebar-tabs { -fx-border-color: transparent transparent #1a1a22 transparent; }
-.tab-button { -fx-background-color: transparent; -fx-text-fill: #55556a; -fx-font-family: "Consolas"; -fx-font-size: 9px; -fx-font-weight: bold; -fx-padding: 10 3; -fx-background-radius: 0; }
-.tab-button:selected { -fx-text-fill: #00e5ff; -fx-border-color: transparent transparent #00e5ff transparent; -fx-border-width: 0 0 2 0; }
-.sidebar-list { -fx-background-color: transparent; -fx-padding: 7 0; } .sidebar-list .list-cell { -fx-background-color: transparent; -fx-padding: 0; } .sidebar-list .list-cell:selected { -fx-background-color: #171720; }
-.side-project { -fx-text-fill: #a0a0b2; -fx-font-size: 10px; } .star { -fx-text-fill: #f7df1e; -fx-font-size: 10px; }
-.sidebar-footer { -fx-padding: 12 14; -fx-border-color: #1a1a22 transparent transparent transparent; }
-.section-title { -fx-text-fill: #55556a; -fx-font-family: "Consolas"; -fx-font-size: 9px; -fx-font-weight: bold; }
-.combo-box { -fx-background-color: #15151c; -fx-border-color: #2a2a35; -fx-border-radius: 3; -fx-font-size: 10px; } .combo-box .list-cell { -fx-text-fill: #bcbcd0; -fx-background-color: #15151c; }
-.toolbar { -fx-pref-height: 46; -fx-border-color: transparent transparent #1a1a22 transparent; }
-.search-field { -fx-background-color: #0d0d10; -fx-text-fill: #f0f0f5; -fx-prompt-text-fill: #55556a; -fx-border-color: #252530; -fx-border-radius: 4; -fx-background-radius: 4; -fx-font-size: 12px; }
-.button { -fx-cursor: hand; } .tool-button, .action-button { -fx-background-color: #111115; -fx-border-color: #2a2a35; -fx-border-radius: 4; -fx-background-radius: 4; -fx-text-fill: #8888aa; -fx-font-family: "Consolas"; -fx-font-size: 10px; }
-.tool-button:selected { -fx-text-fill: #f7df1e; -fx-border-color: #6c6224; } .add-button { -fx-background-color: #00e5ff18; -fx-border-color: #00e5ff55; -fx-text-fill: #00e5ff; -fx-font-family: "Consolas"; -fx-font-size: 10px; -fx-font-weight: bold; }
-.split-pane { -fx-background-color: #0a0a0c; -fx-padding: 0; } .split-pane-divider { -fx-background-color: #1a1a22; -fx-padding: 0 0.5; }
-.content-scroll, .content-scroll > .viewport { -fx-background-color: #0a0a0c; } .content-scroll { -fx-border-width: 0; } .project-grid { -fx-background-color: #0a0a0c; }
-.project-card { -fx-background-color: #111115; -fx-border-color: #24242e; -fx-border-radius: 5; -fx-background-radius: 5; -fx-cursor: hand; } .project-card:hover { -fx-background-color: #171720; -fx-border-color: #3a3a48; }
-.language-label { -fx-text-fill: #77778c; -fx-font-family: "Consolas"; -fx-font-size: 9px; } .project-name { -fx-text-fill: #f0f0f5; -fx-font-size: 13px; -fx-font-weight: bold; } .project-path, .card-info { -fx-text-fill: #66667a; -fx-font-size: 9px; }
-.tag { -fx-background-color: #1d1d27; -fx-border-color: #30303d; -fx-border-radius: 3; -fx-background-radius: 3; -fx-padding: 2 6; -fx-text-fill: #9292a8; -fx-font-size: 9px; }
-.star-button, .icon-button { -fx-background-color: transparent; -fx-text-fill: #f7df1e; -fx-font-size: 14px; -fx-padding: 0 3; }.icon-button { -fx-text-fill: #8888aa; }
-.detail-panel { -fx-background-color: #0d0d10; }.detail-header, .path-label, .metrics, .tag-pane, .tree-caption, .detail-actions { -fx-padding: 11 16; -fx-border-color: transparent transparent #1a1a22 transparent; }
-.detail-name { -fx-text-fill: #f0f0f5; -fx-font-size: 13px; -fx-font-weight: bold; }.path-label { -fx-text-fill: #77778c; -fx-font-size: 10px; }.metric-value { -fx-text-fill: #c8c8d8; -fx-font-size: 12px; }
-.file-tree, .file-tree .tree-cell { -fx-background-color: #0d0d10; -fx-text-fill: #a6a6bb; -fx-font-family: "Consolas"; -fx-font-size: 10px; }.file-tree .tree-cell:selected { -fx-background-color: #1c1c28; }.file-tree .tree-disclosure-node > .arrow { -fx-background-color: #66667a; }
-.detail-actions { -fx-border-color: #1a1a22 transparent transparent transparent; }.action-button { -fx-padding: 7; }.delete-button { -fx-background-color: #ff446618; -fx-border-color: #ff446655; -fx-text-fill: #ff4466; }
-.scroll-bar { -fx-background-color: transparent; }.scroll-bar .thumb { -fx-background-color: #30303d; -fx-background-radius: 4; }.scroll-bar .increment-button, .scroll-bar .decrement-button { -fx-padding: 0; }
+.app-root {
+    -fx-background-color: #0a0a0c;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.titlebar {
+    -fx-pref-height: 42;
+    -fx-background-color: #0d0d10;
+    -fx-border-color: transparent transparent #1a1a22 transparent;
+}
+
+.window-dot {
+    -fx-min-width: 10;
+    -fx-min-height: 10;
+    -fx-max-width: 10;
+    -fx-max-height: 10;
+    -fx-background-radius: 10;
+}
+
+.dot-red {
+    -fx-background-color: #ff4466;
+}
+
+.dot-yellow {
+    -fx-background-color: #f7df1e;
+}
+
+.dot-green {
+    -fx-background-color: #39ff8a;
+}
+
+.brand,
+.mono {
+    -fx-font-family: "Consolas", monospace;
+}
+
+.brand {
+    -fx-text-fill: #77778c;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 2px;
+}
+
+.muted {
+    -fx-text-fill: #55556a;
+    -fx-font-size: 10px;
+}
+
+.accent {
+    -fx-text-fill: #00e5ff;
+    -fx-font-size: 10px;
+}
+
+.sidebar {
+    -fx-background-color: #0d0d10;
+    -fx-border-color: transparent #1a1a22 transparent transparent;
+}
+
+.sidebar-tabs {
+    -fx-border-color: transparent transparent #1a1a22 transparent;
+}
+
+.tab-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #55556a;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 3;
+    -fx-background-radius: 0;
+}
+
+.tab-button:selected {
+    -fx-text-fill: #00e5ff;
+    -fx-border-color: transparent transparent #00e5ff transparent;
+    -fx-border-width: 0 0 2 0;
+}
+
+.sidebar-list {
+    -fx-background-color: transparent;
+    -fx-padding: 7 0;
+}
+
+.sidebar-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.sidebar-list .list-cell:selected {
+    -fx-background-color: #171720;
+}
+
+.side-project {
+    -fx-text-fill: #a0a0b2;
+    -fx-font-size: 10px;
+}
+
+.star {
+    -fx-text-fill: #f7df1e;
+    -fx-font-size: 10px;
+}
+
+.sidebar-footer {
+    -fx-padding: 12 14;
+    -fx-border-color: #1a1a22 transparent transparent transparent;
+}
+
+.section-title {
+    -fx-text-fill: #55556a;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+}
+
+.combo-box {
+    -fx-background-color: #15151c;
+    -fx-border-color: #2a2a35;
+    -fx-border-radius: 3;
+    -fx-font-size: 10px;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #bcbcd0;
+    -fx-background-color: #15151c;
+}
+
+.toolbar {
+    -fx-pref-height: 46;
+    -fx-border-color: transparent transparent #1a1a22 transparent;
+}
+
+.search-field {
+    -fx-background-color: #0d0d10;
+    -fx-text-fill: #f0f0f5;
+    -fx-prompt-text-fill: #55556a;
+    -fx-border-color: #252530;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-font-size: 12px;
+}
+
+.button {
+    -fx-cursor: hand;
+}
+
+.tool-button,
+.action-button {
+    -fx-background-color: #111115;
+    -fx-border-color: #2a2a35;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-text-fill: #8888aa;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 10px;
+}
+
+.tool-button:selected {
+    -fx-text-fill: #f7df1e;
+    -fx-border-color: #6c6224;
+}
+
+.add-button {
+    -fx-background-color: #00e5ff18;
+    -fx-border-color: #00e5ff55;
+    -fx-text-fill: #00e5ff;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+.split-pane {
+    -fx-background-color: #0a0a0c;
+    -fx-padding: 0;
+}
+
+.split-pane-divider {
+    -fx-background-color: #1a1a22;
+    -fx-padding: 0 0.5;
+}
+
+.content-scroll,
+.content-scroll>.viewport {
+    -fx-background-color: #0a0a0c;
+}
+
+.content-scroll {
+    -fx-border-width: 0;
+}
+
+.project-grid {
+    -fx-background-color: #0a0a0c;
+}
+
+.project-card {
+    -fx-background-color: #111115;
+    -fx-border-color: #24242e;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.project-card:hover {
+    -fx-background-color: #171720;
+    -fx-border-color: #3a3a48;
+}
+
+.language-label {
+    -fx-text-fill: #77778c;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 9px;
+}
+
+.project-name {
+    -fx-text-fill: #f0f0f5;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.project-path,
+.card-info {
+    -fx-text-fill: #66667a;
+    -fx-font-size: 9px;
+}
+
+.tag {
+    -fx-background-color: #1d1d27;
+    -fx-border-color: #30303d;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 2 6;
+    -fx-text-fill: #9292a8;
+    -fx-font-size: 9px;
+}
+
+.star-button,
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #f7df1e;
+    -fx-font-size: 14px;
+    -fx-padding: 0 3;
+}
+
+.icon-button {
+    -fx-text-fill: #8888aa;
+}
+
+.detail-panel {
+    -fx-background-color: #0d0d10;
+}
+
+.detail-header,
+.path-label,
+.metrics,
+.tag-pane,
+.tree-caption,
+.detail-actions {
+    -fx-padding: 11 16;
+    -fx-border-color: transparent transparent #1a1a22 transparent;
+}
+
+.detail-name {
+    -fx-text-fill: #f0f0f5;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.path-label {
+    -fx-text-fill: #77778c;
+    -fx-font-size: 10px;
+}
+
+.metric-value {
+    -fx-text-fill: #c8c8d8;
+    -fx-font-size: 12px;
+}
+
+.file-tree,
+.file-tree .tree-cell {
+    -fx-background-color: #0d0d10;
+    -fx-text-fill: #a6a6bb;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 9px;
+    -fx-cell-size: 9px;
+    -fx-padding: 0 1px;
+    -fx-indent: 3px;
+    -fx-graphic-text-gap: 3px;
+}
+
+.file-tree .tree-cell:selected {
+    -fx-background-color: #1c1c28;
+}
+
+.file-tree .tree-disclosure-node>.arrow {
+    -fx-background-color: #66667a;
+}
+
+.folder-icon,
+.file-icon-fallback {
+    -fx-text-fill: #66667a;
+    -fx-font-family: "Consolas";
+    -fx-font-size: 10px;
+}
+
+.detail-actions {
+    -fx-border-color: #1a1a22 transparent transparent transparent;
+}
+
+.action-button {
+    -fx-padding: 7;
+}
+
+.delete-button {
+    -fx-background-color: #ff446618;
+    -fx-border-color: #ff446655;
+    -fx-text-fill: #ff4466;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #30303d;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-padding: 0;
+}

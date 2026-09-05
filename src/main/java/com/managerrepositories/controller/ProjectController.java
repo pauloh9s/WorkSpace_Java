@@ -3,8 +3,10 @@ package com.managerrepositories.controller;
 import com.managerrepositories.model.FileNode;
 import com.managerrepositories.model.Project;
 import com.managerrepositories.service.WorkspaceScanner;
+import com.managerrepositories.ui.Devicon;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -239,7 +241,13 @@ public class ProjectController {
             @Override
             protected void updateItem(FileNode n, boolean empty) {
                 super.updateItem(n, empty);
-                setText(empty || n == null ? null : (n.folder() ? "▸  " : "◦  ") + n.name());
+                if (empty || n == null) {
+                    setText(null);
+                    setGraphic(null);
+                    return;
+                }
+                setText(n.name());
+                setGraphic(fileGraphic(n));
             }
         });
     }
@@ -248,6 +256,10 @@ public class ProjectController {
         TreeItem<FileNode> item = new TreeItem<>(node);
         node.children().forEach(child -> item.getChildren().add(treeItem(child)));
         return item;
+    }
+
+    private Node fileGraphic(FileNode node) {
+        return node.folder() ? label("▸", "folder-icon") : Devicon.forFile(node.name(), 12);
     }
 
     @FXML
